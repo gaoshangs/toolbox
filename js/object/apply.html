@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>demo</title>
+        <style type="text/css">
+        
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var a = { x:"xxx" };
+            var b= function(y, z){
+                this.y = y; 
+                this.z = z;
+            }
+
+            b.apply(a, ["apply_yyy", "apply_zzz"]);//绑定参数为数组
+            console.log(a.y,a.z);
+            b.call(a, "call_yyy", "call_zzz");//绑定参数为构造器具体参数
+            console.log(a.y, a.z);
+            var c = b.bind(a, "bind_yyy", "bind_zzz");//手动绑定，手动执行
+            c();
+            console.log(a.y, a.z);
+        </script> 
+    </body>
+
+</html>

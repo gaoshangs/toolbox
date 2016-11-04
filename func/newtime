@@ -1,0 +1,56 @@
+#!/usr/bin/env php
+<?php
+class newTime{
+    private $options = array();
+    public function __construct(){
+        $shortopts = "h";
+        $longopts = array("help", "td::", "dt::");
+        $this->options = getopt($shortopts, $longopts);
+    }
+
+    public function run(){
+        $this->td();
+        $this->dt();
+        $this->help();
+    }
+
+    private function help(){
+        $usage = "Name:\n";
+        $usage .="\tnewtime -- Get format time or timestamp\n";
+        $usage .="Usage:\n"; 
+        $usage .="\tnewtime [options]\n";
+        $usage .="Options:\n";
+        $usage .="\t-h,--help                   show help info\n";
+        $usage .="\t--td[=<timestamp>]          format timestamp to Y-m-d H:i:s, default now date\n";
+        $usage .="\t--dt[=<date>]               convert date to timestamp, default now timestamp\n";
+        echo $usage;
+        exit;
+    }
+
+    private function td(){
+        if(isset($this->options['td'])){
+            $td = $this->options['td'];
+            if(!empty($td)){
+                echo date("Y-m-d H:i:s", $td); 
+            }else{
+                echo date("Y-m-d H:i:s", time());
+            }
+            exit;
+        }
+    }
+
+    private function dt(){
+        if(isset($this->options['dt'])){
+            $dt = $this->options['dt'];
+            if(!empty($this->options['dt'])){
+                echo strtotime($dt);
+            }else{
+                echo time();
+            }
+            exit;
+        }
+    }
+}
+
+$newTime = new newTime();
+$newTime->run();

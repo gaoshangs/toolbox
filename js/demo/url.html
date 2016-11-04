@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>url分割</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var url ="http://o84xihkdj.bkt.clouddn.com/146598589700051.jpg"; 
+            urlArr = url.split("//");
+            console.log(urlArr);
+            var start = urlArr[1].indexOf("/");
+            console.log(start);
+            var static_url = urlArr[1].substring(start);
+            console.log(static_url);
+        </script> 
+    </body>
+
+</html>

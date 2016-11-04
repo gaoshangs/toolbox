@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>demo</title>
+       <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script> 
+        <style type="text/css"> </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var a1 = "foo";
+            console.log(typeof a1);
+            console.log(a1.constructor);
+            var a2 = new String("foo");
+            console.log(typeof a2);
+            var a3 = [1,2,3];
+            console.log(typeof a3);
+            console.log(a3.constructor);
+            console.log(Object.prototype.toString.call(a3));
+        </script> 
+    </body>
+</html>

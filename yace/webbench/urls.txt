@@ -1,0 +1,2 @@
+http://seq.workt.com/seq_number/?biz=1&ins=1
+http://func.toolbox.com/uniqid.php

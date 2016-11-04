@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <errno.h>
+int errno;
+
+int main()
+{
+    FILE *fp;
+    int errnum;
+
+    fp = fopen("a.txt", "r+"); 
+
+    if(fp == NULL)
+    {
+        errnum = errno;
+        fprintf(stderr, "不存在a.txt文件,错误号:%d\n", errnum);
+        perror("perror 打开文件报错"); 
+        fprintf(stderr, "打开文件错误:%s\n", strerror(errnum));
+    }
+}

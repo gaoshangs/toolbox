@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>prototype 实现继承</title>
+        <style type="text/css"> </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function Animal(){
+                //this.species = "动物"; 
+                this.foodType="食类";
+            }
+
+            Animal.prototype.species = "动物";
+
+            function Cat(name, color){
+                this.name = name;
+                this.color = color;
+            }
+
+            function extend(Child, Parent){
+                var F = function(){};
+                F.prototype = Parent.prototype;
+                Child.prototype = new F();
+                Child.prototype.constructor = Child;
+                Child.uber = Parent.prototype;//备用属性
+            }
+            
+            extend(Cat, Animal);
+            var cat1 = new Cat("小花", "花色");
+            console.log(Cat.prototype);
+            console.log(Cat);
+            console.log(cat1);
+            console.log(cat1.species);
+            console.log(cat1.foodType);
+        </script> 
+    </body>
+
+</html>

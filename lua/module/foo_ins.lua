@@ -1,0 +1,11 @@
+local foo = require("foo")
+print(": 与.的区别")
+print(": usage:")
+local f = foo:new(10, 20)
+print(f:area())
+print(f:perimeter())
+
+print(". usage:")
+local f1 = foo.new(foo, 10, 20)
+print(f1.area(foo))
+print(f1.perimeter(foo))

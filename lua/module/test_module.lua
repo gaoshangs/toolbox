@@ -1,0 +1,6 @@
+local m = require("m1")
+require("m2")
+print(m.constant)
+print(m2.constant)
+m.func3()
+m2.func3()

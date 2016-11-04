@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>使用apply完成继承</title>
+        <style type="text/css">
+        
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var Animal = function(){
+                this.species = "动物"; 
+                this.say = function(){
+                    console.log("Animal say hello"); 
+                }
+            }
+
+            Animal.prototype.show = function(){
+                console.log("Animal show time"); 
+            }
+
+            var Food = function(like){
+                this.like = like 
+            }
+
+            var Cat = function(name, color){
+                Animal.apply(this);//使用apply完成继承
+                var food = Food.bind(this, "Fish");//使用bind完成继承
+                food();
+                this.name = name; 
+                this.color = color;
+            }
+
+            Cat.prototype.desc = function(){
+                console.log(this.species);
+                console.log(this.like);
+                console.log(this.name);
+                console.log(this.color);
+            }
+            var animal1 = new Animal();
+            var cat1 = new Cat("小花", "白色");
+            var cat2 = new Cat("小红", "黑色");
+            console.log(animal1);//apply继承无法继承prototype属性
+            console.log(cat1);
+            cat1.desc();
+            cat1.like ="xiao";
+            console.log(cat1.species === cat2.species);
+            console.log(cat1.like=== cat2.like);
+        </script> 
+    </body>
+</html>

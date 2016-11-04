@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit>
+  <testsuites>
+    <testsuite>
+      	<directory>a</directory>
+      	<directory>b</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <var name="DB_DSN" value="mysql:dbname=myguestbook;host=localhost" />
+    <var name="DB_USER" value="user" />
+    <var name="DB_PASSWD" value="passwd" />
+    <var name="DB_DBNAME" value="myguestbook" />
+    <const name="DB_HOST" value="127.0.0.1" />
+    </php>
+</phpunit>

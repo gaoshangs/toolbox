@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <!--   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script> -->
+    </head>
+<body>
+<script type="text/javascript">
+
+    var a=function(){
+    //empty
+    }
+    a.prototype.var1=[1,2,3];
+    a.prototype.var2 = "猫科动物";
+    var b=new a();
+    var d = new a();
+    b.var1.push(4);
+    b.var2 = "昆虫";
+    var c=new a();
+    console.log(b.var2);
+    console.log(c.var2);
+    console.log(d.var2);
+    console.log("--------------");
+    console.log(c.var1.join(","));
+    console.log(d.var1.join(","));
+    
+    function Cat(name, color){
+        this.name = name;
+        this.color = color;
+        this.desc = function(){
+            console.log(this.name, "的颜色是", this.color); 
+        }
+    }
+    Cat.prototype.type="猫科动物";
+    Cat.prototype.eat = function(){ console.log("吃老鼠"); };
+
+   // console.log(Cat);
+    var cat1 = new Cat("cat1", "yellow");
+    var cat2 = new Cat("cat2", "white");
+    cat1.desc();
+   // console.log(cat1.name);
+   // console.log(cat1);
+   // console.log(cat1.constructor);
+   // console.log(cat1 instanceof Cat);
+   // console.log(cat1.eat == cat2.eat);
+   // console.log(Cat.prototype.isPrototypeOf(cat1));
+
+    cat1.type="Cat1 动物";
+    console.log(cat1.type == cat2.type);
+   // for(var prop in cat1){
+   //     console.log("cat1["+prop+"]="+cat1[prop]); 
+   // }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "require": {
+    "test/hello": "dev-debug"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://git.oschina.net/wgsnow/hello.git"
+    }
+  ]
+}

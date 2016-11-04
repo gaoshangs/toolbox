@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <!--   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script> -->
+    </head>
+<body>
+<script type="text/javascript">
+
+var a=function(){
+//empty
+}
+a.prototype.var1=[1,2,3];
+var b=new a();
+b.var1.push(4);
+var c=new a();
+alert(c.var1.join(","))
+
+
+
+    function Cat(name, color){
+        this.name = name;
+        this.color = color;
+    }
+    Cat.prototype.type="猫科动物";
+    Cat.prototype.eat = function(){ console.log("吃老鼠"); };
+
+   // console.log(Cat);
+    var cat1 = new Cat("cat1", "yellow");
+    var cat2 = new Cat("cat2", "white");
+   // console.log(cat1.name);
+   // console.log(cat1);
+   // console.log(cat1.constructor);
+   // console.log(cat1 instanceof Cat);
+   // console.log(cat1.eat == cat2.eat);
+   // console.log(Cat.prototype.isPrototypeOf(cat1));
+
+    cat1.type="Cat1 动物";
+    console.log(cat1.type == cat2.type);
+   // for(var prop in cat1){
+   //     console.log("cat1["+prop+"]="+cat1[prop]); 
+   // }
+    
+</script>
+</body>
+</html>

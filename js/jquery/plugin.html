@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    </head>
+<body>
+<p style="display:none" id="who" >我是谁的谁的谁</p>
+<script type="text/javascript">
+   (function($){
+        $.fn.showIt = function(){
+            this.fadeIn('normal',function(){
+                $(this).css('color','red'); 
+            });
+        }
+   })(jQuery); 
+   $("#who").showIt();
+</script>
+</body>
+</html>
