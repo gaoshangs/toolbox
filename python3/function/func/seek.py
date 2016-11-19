@@ -1,0 +1,8 @@
+fo = open("log.txt")
+print("filename:", fo.name)
+fo.seek(0,0)
+print(fo.readlines())
+print(fo.tell())
+fo.seek(0, 0)
+print(fo.readline())
+fo.close()

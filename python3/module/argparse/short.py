@@ -1,0 +1,10 @@
+import argparse
+parser = argparse.ArgumentParser(description="This is a argparse module sample")
+parser.add_argument('-a', action='store_true', default=False)
+parser.add_argument('-b', action="store", dest='b')
+parser.add_argument('-c', action="store", dest='c', type=int)
+args =  parser.parse_args()
+#args =  parser.parse_args(['-a', '-bvalue', '-c', '3'])
+print(args.a)
+print(args.b)
+print(args.c)
